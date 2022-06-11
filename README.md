@@ -1,7 +1,7 @@
 # surfs_up
 ## Project Overview
 
-Overview of the analysis: Explain the purpose of the new analysis.
+Overview of the analysis: Explain the purpose of the new analysis. <br>
 W. Avy is opening a shop in Hawaii. In order to have a successful launch and sustainable company, this analysis will help us understand weather / temperature trends before opening up shop for surfing and ice cream. 
 
 ## Resources
@@ -22,11 +22,17 @@ Results: Provide a bulleted list with three major points from the two analysis d
 ![December Summary Table](https://github.com/jinnabelle/surfs_up/blob/main/decemberDF.png)
 
 ## Summary
-Summary: Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
+Summary: Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December. <br>
 Based on the results from the analysis above, I would recommend W. Avy to open up the surf and ice cream shop in Hawaii because these products are necessary throughout the whole year. The temperatures on average for these two months are relatively safe for both surfing and eating ice cream. The lowest temperature on record in December of 56 degrees might be worth calling out but according to the average, it does not get that low in temperature that often.
 
-For further investigation, I would suggest looking at temperatures for a range of months for the summer and winter. I feel like this would give them a better understanding of the temperature for each seasons vs. one month. 
+For further investigation, I would suggest looking at temperatures for a range of months for the summer and winter. I feel like this would give them a better understanding of the temperature for each seasons vs. one month. <br>
+
     session.query(Measurement.date, Measurement.tobs).filter(extract('month',Measurement.date).in_((6,7,8,12,1,2)))
 
-I would also query precipitation in the winter months because I think rain has a big factor in people's decision of going out to surf and/or eat ice cream during the winter months. 
+![Summer and Winter Range](https://github.com/jinnabelle/surfs_up/blob/main/extra%20query1%20results.png)
+
+I would also query precipitation in the winter months because I think rain has a big factor in people's decision of going out to surf and/or eat ice cream during the winter months. <br>
+
     session.query(Measurement.date, Measurement.prcp).filter(extract('month',Measurement.date).in_((12,1,2))).all()
+    
+![Rain in Winter Months](https://github.com/jinnabelle/surfs_up/blob/main/extra%20query2%20results.png) 
